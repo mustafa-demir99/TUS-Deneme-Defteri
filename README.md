@@ -22,6 +22,7 @@
 - **Zayıf ders analizi:** Son 5 denemeye göre her dersin başarı oranı; en düşük 3 ders "öncelik" olarak işaretlenir.
 - **Birden fazla kişi:** Aynı uygulamada birden fazla kişi takip edilebilir, karşılaştırma tablosu otomatik oluşur.
 - **Yedekleme:** Veriler JSON dosyası olarak indirilip başka bir cihaza yüklenebilir.
+- **Telefona yüklenebilir (PWA):** Ana ekrana eklenince kendi ikonuyla uygulama gibi açılır, internet yokken de çalışır.
 - **Açık ve koyu tema:** Cihazın temasına otomatik uyum sağlar, telefonda da rahat kullanılır.
 
 ## Ekran görüntüleri
@@ -38,6 +39,12 @@ Kurulum gerekmez. [Canlı demoyu](https://mustafa-demir99.github.io/tus-deneme-d
 2. **Yeni deneme gir** ile her dersin doğru ve yanlış sayısını yaz.
 3. Netler, grafik ve ders analizi kendiliğinden güncellenir.
 
+### Telefona yükleme
+
+- **Android (Chrome):** Siteyi aç, sağ üstteki **Uygulamayı yükle** düğmesine ya da menüden **Ana ekrana ekle**'ye bas.
+- **iPhone (Safari):** Siteyi aç, **Paylaş** düğmesine bas, **Ana Ekrana Ekle**'yi seç.
+- **Bilgisayar (Chrome/Edge):** Adres çubuğundaki yükle simgesine tıkla.
+
 > Veriler tarayıcının kendi hafızasında (localStorage) saklanır ve hiçbir sunucuya gönderilmez. Başka cihaza taşımak için **Yedek dosyası indir** düğmesini kullan.
 
 ## Proje yapısı
@@ -47,6 +54,9 @@ Kurulum gerekmez. [Canlı demoyu](https://mustafa-demir99.github.io/tus-deneme-d
 ├── style.css       Tasarım (açık/koyu tema)
 ├── app.js          Uygulama mantığı, net hesabı, grafik
 ├── favicon.svg     Site ikonu
+├── manifest.webmanifest  Uygulama bilgileri (ad, ikon, renk)
+├── sw.js           Service worker: çevrimdışı çalışma
+├── icons/          Uygulama ikonları
 └── screenshots/    README görselleri
 ```
 

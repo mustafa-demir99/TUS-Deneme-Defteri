@@ -230,3 +230,12 @@ document.addEventListener("submit",async ev=>{
 loadAll();
 aktif=load("aktif");
 render();
+
+/* ---------- telefona yükleme (PWA) ---------- */
+if("serviceWorker" in navigator&&location.protocol.startsWith("http")){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
+let yuklemeIstegi=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();yuklemeIstegi=e;$("#yukleBtn").hidden=false});
+$("#yukleBtn").addEventListener("click",async()=>{if(!yuklemeIstegi)return;yuklemeIstegi.prompt();await yuklemeIstegi.userChoice;yuklemeIstegi=null;$("#yukleBtn").hidden=true});
+window.addEventListener("appinstalled",()=>{$("#yukleBtn").hidden=true;toast("Uygulama yüklendi")});

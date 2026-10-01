@@ -34,6 +34,7 @@ button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:2px solid var(--accent);padding-bottom:12px}
+.head-r{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end}
 .brand{display:flex;align-items:center;gap:12px}
 .bubble{width:28px;height:28px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;flex:none}
 .bubble::after{content:"";width:16px;height:16px;border-radius:50%;background:var(--accent)}
